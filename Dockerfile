@@ -1,6 +1,6 @@
-# Base image
+ # Base image
 FROM ubuntu
-RUN apt-get update && apt-get install -y build-essential pip net-tools iputils-ping iproute2 curl python3 make \
+RUN apt-get update && apt-get install -y build-essential pip net-tools iputils-ping iproute2 curl \
     && curl -fsSL https://db.nodesource.com/setup_18.x | bash - \
     && apt-get install -y nodejs npm \
     && npm install -g @nestjs/cli
@@ -24,7 +24,7 @@ RUN npm install
 COPY . .
 
 # Creates a "dist" folder with the production build
-RUN npm run build
+# RUN npm run build
 
 # Start the server using the production build
 CMD [ "node", "app.js" ]
