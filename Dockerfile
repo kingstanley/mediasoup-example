@@ -1,6 +1,6 @@
 # Base image
 FROM ubuntu
-RUN apt-get update && apt-get install -y build-essential pip net-tools iputils-ping iproute2 curl \
+RUN apt-get update && apt-get install -y build-essential pip net-tools iputils-ping iproute2 curl python3 make \
     && curl -fsSL https://db.nodesource.com/setup_18.x | bash - \
     && apt-get install -y nodejs npm \
     && npm install -g @nestjs/cli
